@@ -1,0 +1,158 @@
+@import 'libs/bootstrap-reboot.min';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+//........................MODAL...................///
+.modal {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 660px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    &__header {
+        height: 90px;
+        padding: 10px 40px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+    }
+    &__content {
+        padding: 40px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    &__footer {
+        height: 90px;
+        padding: 10px 40px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+    }
+}
+
+//.......................BUttons.....................//
+.button {
+    padding: 10px 40px;
+    font-style: 18px;
+    border-radius: 4px;
+    border: 1px solid #c1c1c1;
+    background-color: #fff;
+    cursor: pointer;
+    &:hover {
+        background-color: #c1c1c1;
+    }
+    &__primary {
+        background-color:#435ef8;
+        &:hover {
+            background-color: rgb(110, 110, 223); 
+        }
+    }
+}
+
+//.....................CARD-two...................//
+.card {
+    width: 200px;
+    text-align: center;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in;
+    &:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    &__title {
+        font-size: 17px;
+        margin-top: 7px;
+    }
+    &__header {
+        padding: 4px 10px;
+        height: 55px;
+        width: 100%;
+        border-bottom: 1px solid #c1c1c1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            color: rgb(110, 110, 223);
+            line-height: 30px;
+            
+        }
+    }
+}
+.cards__wrp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    gap: 20px;
+}
+.cards__wrp + * {
+    margin-top: 30px;
+}
+
+
+//...................RADIO....................//
+
+//скрываем радиокнупку 
+.radio-select {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    margin-left: -1000px;
+    appearance: none;
+}
+// меняем цвет рамки карты( можем объеденить через запятую)
+.radio-select:checked + .card{
+    border-color: rgb(110, 110, 223);
+    &:hover {
+        color: rgb(110, 110, 223);
+    }
+}
+//меняем цвет рамки карты - header
+.radio-select:checked + .card .card__header {
+    border-color: rgb(110, 110, 223);
+}
+
+
+//......................MEDIA.....................//
+@media (max-width: 660px) {
+    .modal {
+     top: 10px;
+     bottom: 10px;
+     left: 20px;
+     right: 20px;
+     width: auto;
+     transform: none;
+    }
+    .title-1 {
+        font-size: 26px;
+        font-weight: 500;
+    }
+    .title-1 + * {
+        margin-top: 15px;
+    }
+    .buttons-row {
+        display: flex;
+        gap: 15px;
+    }
+    .button {
+        padding: 10px 20px;
+    }
+}
+ 
+
+
